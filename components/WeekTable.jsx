@@ -136,13 +136,13 @@ const WeekTable = () => {
   }
   const periods = [1, 2, 3, 4, 5, 6, 7, 8]
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col" id="teacherTable">
       <div className="flex bg-slate-800 text-white py-5 justify-center">
         <h1 className="font-bold text-xl">Teachers Weekly Schedule</h1>
       </div>
       <table className="table-auto bg-white w-full text-center border-collapse border border-slate-400">
         <tbody className=''>
-          <tr>
+          <tr className="h-16">
             <th className='border-solid border-2 border-slate-400 bg-violet-200' rowSpan={2}>No</th>
             <th className='border-solid border-2 border-slate-400 bg-violet-300' rowSpan={2}>Name</th>
             <th className='border-solid border-2 border-slate-400 bg-violet-400' rowSpan={2}>Subject</th>
@@ -153,7 +153,7 @@ const WeekTable = () => {
             <th className='border-solid border-2 border-slate-400 bg-purple-500' colSpan={8}>Thursday</th>
             <th className='border-solid border-2 border-slate-400 bg-violet-400' colSpan={8}>Friday</th>
           </tr>
-          <tr className="font-bold">
+          <tr className="font-bold h-10">
             {
               periods.map((p) => (
                 <td key={p} className='border-solid border-2 border-slate-400 bg-slate-300'>{p}</td>
@@ -181,7 +181,7 @@ const WeekTable = () => {
           </tr>
           {
             teacherWithPeriods.map((item, index) => (
-              <tr className='' key={index}>
+              <tr className='h-10 mt-0' key={index}>
                 <td className='border-solid border-2 border-slate-400 bg-pink-300' key={index + 1}>{index + 1}</td>
                 <td className='border-solid border-2 border-slate-400 bg-pink-400' key={item.name}>{item.name}</td>
                 <td className={`border-solid border-2 border-slate-400 ${subjectColorChange(item.subjects)}`} key={item.subjects}>{item.subjects}</td>
